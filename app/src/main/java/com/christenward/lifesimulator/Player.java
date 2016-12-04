@@ -3,7 +3,12 @@ package com.christenward.lifesimulator;
 import android.content.Context;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Random;
+
+import static java.lang.Math.min;
 
 /**
  * Created by Giraffer on 5/11/2016.
@@ -317,17 +322,27 @@ public class Player {
         Random rand = new Random();
         int siblings = rand.nextInt(4);
         Npc mother = generateMom(context);
+        Npc father = null;
         mother.setRelationship("mother");
         this.family.add(mother);
+        boolean hasFather = false;
 
         if (rand.nextInt(100) > 34){
-            Npc father = generateDad(context, mother);
+            father = generateDad(context, mother);
             father.setRelationship("father");
             this.family.add(father);
+            hasFather = true;
         }
         if (siblings > 0){
             for (int i = 0; i < siblings; i++){
-                Npc sibling = generateSibling(context, mother);
+                int youngestAge;
+                if (hasFather){
+                    youngestAge = Math.min(mother.getAge(), father.getAge());
+                }
+                else{
+                    youngestAge = mother.getAge();
+                }
+                Npc sibling = generateSibling(context, youngestAge);
                 switch (sibling.getGender()){
                     default:
                     case "MALE":
@@ -345,6 +360,15 @@ public class Player {
             member.setRelationshipScore(100);
             member.setLastName(this.lastName);
         }
+        Collections.sort(this.family, new Comparator<Player>(){
+
+            public int compare(Player b, Player a)
+            {
+                return a.age < b.age ? -1
+                        : a.age > b.age ? 1
+                        : 0;
+            }
+        });
     }
 
     public Npc generateMom(Context context){
@@ -364,10 +388,10 @@ public class Player {
         return father;
     }
 
-    public Npc generateSibling(Context context, Npc mother){
+    public Npc generateSibling(Context context, int parentAge){
         Random rand = new Random();
         Npc sibling = new Npc(context);
-        sibling.setAge(rand.nextInt(mother.getAge() - 16) +1);
+        sibling.setAge(rand.nextInt(parentAge - 16) +1);
         return sibling;
     }
 
