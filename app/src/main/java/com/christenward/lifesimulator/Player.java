@@ -25,6 +25,7 @@ public class Player {
     protected int stage;
     private ArrayList<Npc> family;
     private ArrayList<Npc> relationships;
+    private boolean stageChanged = false;
 
     public Player(){
         this.family = new ArrayList<Npc>();
@@ -107,6 +108,39 @@ public class Player {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public void incrementAge(){
+        //protected String[] lifeStages = {"INFANT", "TODDLER", "PREK", "CHILD", "TEENAGER", "YOUNGADULT", "ADULT", "ELDERLY"};
+        this.age += 1;
+        if (this.age == 2){ //toddler
+            setStage(1);
+            setStageChanged(true);
+        }
+        else if (this.age == 4) { //prek
+            setStage(2);
+            setStageChanged(true);
+        }
+        else if (this.age == 6) { //child
+            setStage(3);
+            setStageChanged(true);
+        }
+        else if (this.age == 13) { //teen
+            setStage(4);
+            setStageChanged(true);
+        }
+        else if (this.age == 18) { // youngadult
+            setStage(5);
+            setStageChanged(true);
+        }
+        else if (this.age == 26) { //adult
+            setStage(6);
+            setStageChanged(true);
+        }
+        else if (this.age == 61 ) { //elderly
+            setStage(7);
+            setStageChanged(true);
+        }
     }
 
     public String getGender() {
@@ -335,5 +369,13 @@ public class Player {
         Npc sibling = new Npc(context);
         sibling.setAge(rand.nextInt(mother.getAge() - 16) +1);
         return sibling;
+    }
+
+    public boolean isStageChanged() {
+        return stageChanged;
+    }
+
+    public void setStageChanged(boolean stageChanged) {
+        this.stageChanged = stageChanged;
     }
 }

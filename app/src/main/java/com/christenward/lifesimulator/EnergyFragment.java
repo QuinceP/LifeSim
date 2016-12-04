@@ -20,9 +20,11 @@ public class EnergyFragment extends Fragment {
         sleepButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast toast = Toast.makeText(getContext(), "Slept for one hour.", Toast.LENGTH_SHORT);
+                Toast toast = Toast.makeText(getContext(), "Slept for 8 hours.", Toast.LENGTH_SHORT);
                 toast.show();
-                ((MainActivity)getActivity()).getClock().incrementHours();
+                for (int i = 0; i < 8; i++) {
+                    ((MainActivity) getActivity()).getClock().incrementHours();
+                }
                 ((MainActivity)getActivity()).updateTime();
             }
         });

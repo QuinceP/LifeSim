@@ -10,6 +10,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 /**
@@ -50,10 +51,27 @@ public class MainActivity extends FragmentActivity {
         }
         String time = hours + ":" + minutes;
         String day = "Day " + String.valueOf(clock.getDays());
+        String year = "Year " + String.valueOf(clock.getYears());
         TextView dayText = (TextView) findViewById(R.id.dayText);
         TextView timeText = (TextView) findViewById(R.id.timeText);
+        TextView yearText = (TextView) findViewById(R.id.yearText);
         dayText.setText(day);
         timeText.setText(time);
+        yearText.setText(year);
+        ProgressBar healthBar = (ProgressBar) findViewById(R.id.health_bar);
+        ProgressBar energyBar = (ProgressBar) findViewById(R.id.energy_bar);
+        ProgressBar moodBar = (ProgressBar) findViewById(R.id.mood_bar);
+        ProgressBar hungerBar = (ProgressBar) findViewById(R.id.hunger_bar);
+        int health = 100;
+        int energy = 100;
+        int mood = 100;
+        int hunger = 100;
+
+        healthBar.setProgress(health);
+        energyBar.setProgress(energy);
+        moodBar.setProgress(mood);
+        hungerBar.setProgress(hunger);
+
         NameGenerator firstName = new NameGenerator(this, "MALE");
         NameGenerator lastName = new NameGenerator(this, "LAST");
         showEvent("Welcome", getFamilyBlurb());
@@ -105,10 +123,25 @@ public class MainActivity extends FragmentActivity {
         }
         String time = hours + ":" + minutes;
         String day = "Day " + String.valueOf(clock.getDays());
+        String year = "Year " + String.valueOf(clock.getYears());
         TextView dayText = (TextView) findViewById(R.id.dayText);
         TextView timeText = (TextView) findViewById(R.id.timeText);
+        TextView yearText = (TextView) findViewById(R.id.yearText);
         dayText.setText(day);
         timeText.setText(time);
+        yearText.setText(year);
+
+        if (clock.birthday){
+            player.incrementAge();
+            clock.setBirthday(false);
+            String age = String.valueOf(player.getAge()) + ". ";
+            String stageChangeText = "";
+            if(player.isStageChanged()){
+                stageChangeText = "You've grown up. You are now " + String.valueOf(player.getStageName().toLowerCase() + " age.");
+                player.setStageChanged(false);
+            }
+            showEvent(AllEvents.BIRTHDAY.getTitle(), AllEvents.BIRTHDAY.getDescription() + age + stageChangeText);
+        }
     }
 
     /**

@@ -7,10 +7,14 @@ public class Clock {
     int hours;
     int minutes;
     int days;
+    int years;
+    boolean birthday;
+
     public Clock(){
         this.hours = 0;
         this.minutes = 0;
         this.days = 1;
+        this.birthday = false;
     }
     public void setClock(int hours, int minutes, int days){
         this.hours = hours;
@@ -60,5 +64,29 @@ public class Clock {
 
     public void incrementDays(){
         this.days++;
+        if ((this.days % 2) == 0) {
+            incrementYears();
+            setBirthday(true);
+        }
+    }
+
+    public int getYears() {
+        return years;
+    }
+
+    public void setYears(int years) {
+        this.years = years;
+    }
+
+    public void incrementYears(){
+        this.years++;
+    }
+
+    public boolean isBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(boolean birthday) {
+        this.birthday = birthday;
     }
 }
