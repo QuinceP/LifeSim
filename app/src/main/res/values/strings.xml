@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Life Simulator</string>
+
+    <!--Menu-->
+    <string name="health_text">Health</string>
+    <string name="energy_text">Energy</string>
+    <string name="mood_text">Mood</string>
+    <string name="hunger_text">Hunger</string>
+
+   <!--Stats-->
+    <string name="name_title">Name</string>
+    <string name="name_default">John Doe</string>
+    <string name="money_title">Money</string>
+    <string name="dollar_sign">$</string>
+    <string name="money_default">100</string>
+    <string name="age_title">Age</string>
+    <string name="age_default">18</string>
+    <string name="stage_default">Adult</string>
+    <string name="intelligence_title">Intelligence</string>
+    <string name="intelligence_default">5</string>
+    <string name="strength_title">Strength</string>
+    <string name="strength_default">5</string>
+    <string name="charisma_title">Charisma</string>
+    <string name="charisma_default">5</string>
+</resources>

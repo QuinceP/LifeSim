@@ -1,0 +1,172 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EnergyFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/name_default"
+            android:id="@+id/name_value"
+            android:layout_gravity="right|top"
+            android:textSize="30dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/name_title"
+            android:id="@+id/name_title"
+            android:layout_gravity="left|top"
+            android:textSize="30dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/age_title"
+            android:id="@+id/age_title"
+            android:layout_gravity="left|top"
+            android:textSize="30dp"
+            android:layout_below="@+id/name_title"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/age_default"
+            android:id="@+id/age_value"
+            android:layout_gravity="left|top"
+            android:textSize="30dp"
+            android:layout_alignTop="@+id/age_title"
+            android:layout_alignStart="@+id/name_value" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/stage_default"
+            android:id="@+id/stage_value"
+            android:layout_gravity="left|top"
+            android:textSize="30dp"
+            android:layout_alignTop="@+id/age_value"
+            android:layout_alignEnd="@+id/name_value" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/money_title"
+            android:id="@+id/money_title"
+            android:layout_gravity="left|top"
+            android:textSize="30dp"
+            android:layout_below="@+id/age_title"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/money_default"
+            android:id="@+id/money_value"
+            android:layout_gravity="left|top"
+            android:textSize="30dp"
+            android:layout_below="@+id/stage_value"
+            android:layout_alignEnd="@+id/name_value" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/dollar_sign"
+            android:id="@+id/dollar_sign"
+            android:layout_gravity="left|top"
+            android:textSize="30dp"
+            android:layout_below="@+id/stage_value"
+            android:layout_alignStart="@+id/stage_value" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/intelligence_title"
+            android:id="@+id/intelligence_title"
+            android:layout_gravity="left|top"
+            android:textSize="30dp"
+            android:layout_below="@+id/money_title"
+            android:layout_alignParentStart="true" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView2"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/intelligence_default"
+            android:id="@+id/intelligence_value"
+            android:layout_gravity="left|top"
+            android:textSize="30dp"
+            android:layout_below="@+id/money_value"
+            android:layout_alignEnd="@+id/name_value" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/strength_title"
+            android:id="@+id/strength_title"
+            android:layout_gravity="left|top"
+            android:textSize="30dp"
+            android:layout_below="@+id/intelligence_title"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/strength_default"
+            android:id="@+id/strength_value"
+            android:layout_gravity="left|top"
+            android:textSize="30dp"
+            android:layout_below="@+id/intelligence_title"
+            android:layout_alignEnd="@+id/intelligence_value" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/charisma_title"
+            android:id="@+id/charisma_title"
+            android:layout_gravity="left|top"
+            android:textSize="30dp"
+            android:layout_below="@+id/strength_title"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/charisma_default"
+            android:id="@+id/charisma_value"
+            android:layout_gravity="left|top"
+            android:textSize="30dp"
+            android:layout_below="@+id/strength_title"
+            android:layout_alignEnd="@+id/strength_value" />
+    </RelativeLayout>
+</FrameLayout>

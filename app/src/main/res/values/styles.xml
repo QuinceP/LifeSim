@@ -1,0 +1,46 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!--   your app branding color for the app bar -->
+        <item name="colorPrimary">#3F51B5</item>
+        <!--   darker variant for the status bar and contextual app bars -->
+        <item name="colorPrimaryDark">#303F9F</item>
+        <!--   theme UI controls like checkboxes and text fields -->
+        <item name="colorAccent">#FF4081</item>
+    </style>
+
+    <style name="HealthBarStyle" parent="Base.Widget.AppCompat.ProgressBar.Horizontal">
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:progressDrawable">@drawable/health_bar_item</item>
+        <item name="android:background">@drawable/health_bar_item</item>
+        <item name="android:minHeight">10dp</item>
+        <item name="android:maxHeight">20dp</item>
+    </style>
+
+    <style name="EnergyBarStyle" parent="Base.Widget.AppCompat.ProgressBar.Horizontal">
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:progressDrawable">@drawable/energy_bar_item</item>
+        <item name="android:background">@drawable/energy_bar_item</item>
+        <item name="android:minHeight">10dp</item>
+        <item name="android:maxHeight">20dp</item>
+    </style>
+
+    <style name="MoodBarStyle" parent="Base.Widget.AppCompat.ProgressBar.Horizontal">
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:progressDrawable">@drawable/mood_bar_item</item>
+        <item name="android:background">@drawable/mood_bar_item</item>
+        <item name="android:minHeight">10dp</item>
+        <item name="android:maxHeight">20dp</item>
+    </style>
+
+    <style name="HungerBarStyle" parent="Base.Widget.AppCompat.ProgressBar.Horizontal">
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:progressDrawable">@drawable/hunger_bar_item</item>
+        <item name="android:background">@drawable/hunger_bar_item</item>
+        <item name="android:minHeight">10dp</item>
+        <item name="android:maxHeight">20dp</item>
+    </style>
+
+
+</resources>
